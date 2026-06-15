@@ -1,0 +1,31 @@
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Showcase from "@/components/Showcase";
+import TrustBar from "@/components/TrustBar";
+import Services from "@/components/Services";
+import Process from "@/components/Process";
+import Results from "@/components/Results";
+import Testimonials from "@/components/Testimonials";
+import Team from "@/components/Team";
+import Pricing from "@/components/Pricing";
+import BookCta from "@/components/BookCta";
+import Footer from "@/components/Footer";
+
+export default function Home() {
+  return (
+    <main>
+      <Header />
+      <Hero />
+      <Showcase />
+      <TrustBar />
+      <Services />
+      <Process />
+      <Results />
+      <Testimonials />
+      <Team />
+      <Pricing />
+      <BookCta />
+      <Footer />
+    </main>
+  );
+}

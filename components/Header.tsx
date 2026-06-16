@@ -24,7 +24,7 @@ export default function Header() {
       {/* Brand name */}
       <a
         href="#"
-        className="fixed left-5 top-5 z-50 font-display text-[15px] font-700 tracking-[-0.02em] text-white transition-opacity duration-200 hover:opacity-60"
+        className="fixed left-5 top-5 z-50 font-display text-[15px] font-700 tracking-[-0.02em] text-[#1d1d1f] transition-opacity duration-200 hover:opacity-60 dark:text-white"
       >
         {site.brand}
       </a>

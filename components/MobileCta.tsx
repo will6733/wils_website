@@ -17,7 +17,7 @@ export default function MobileCta() {
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="border-t border-white/10 bg-black/90 backdrop-blur-md px-4 py-3 pb-safe">
+      <div className="border-t border-[#d2d2d7] bg-white/90 px-4 py-3 pb-safe backdrop-blur-md dark:border-white/10 dark:bg-black/90">
         <a
           href={site.bookingUrl}
           className="flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#0071e3] px-6 py-3 text-[14px] font-600 text-white active:scale-[0.97] transition-transform"

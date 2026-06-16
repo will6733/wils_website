@@ -3,6 +3,8 @@ import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import MobileCta from "@/components/MobileCta";
+import ThemeProvider from "@/components/ThemeProvider";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -30,10 +32,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`dark ${dmSans.variable} ${spaceGrotesk.variable}`}>
+      <head>
+        {/* Anti-flash: apply saved theme before first paint */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.classList.toggle('dark',t==='dark');})();` }} />
+      </head>
       <body>
-        {children}
-        <MobileCta />
+        <ThemeProvider>
+          {children}
+          <ThemeToggle />
+          <MobileCta />
+        </ThemeProvider>
       </body>
     </html>
   );

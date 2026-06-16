@@ -29,13 +29,19 @@ export default function Header() {
         {site.brand}
       </a>
 
-      {/* Desktop sticky CTA — hidden on mobile (MobileCta handles it) */}
-      <a
-        href={site.bookingUrl}
-        className="fixed left-1/2 top-5 z-50 hidden -translate-x-1/2 md:inline-flex min-h-[36px] items-center gap-1.5 rounded-full bg-[#0071e3] px-5 py-2 text-[13px] font-600 text-white transition-colors duration-200 hover:bg-[#0077ed] active:scale-[0.97]"
+      {/* Left-edge persistent CTA — desktop only, stays out of content area */}
+      <div
+        className="fixed left-0 top-1/2 z-50 hidden md:block"
+        style={{ transform: "translateY(-50%)" }}
       >
-        {site.primaryCta}
-      </a>
+        <a
+          href={site.bookingUrl}
+          className="flex items-center rounded-r-2xl bg-[#0071e3] px-3 py-5 text-[12px] font-600 text-white transition-colors duration-200 hover:bg-[#0077ed] active:opacity-80"
+          style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", letterSpacing: "0.06em" }}
+        >
+          {site.primaryCta}
+        </a>
+      </div>
 
       {/* Backdrop */}
       <div

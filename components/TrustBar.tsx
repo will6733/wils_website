@@ -1,25 +1,25 @@
 import { clientLogos } from "@/lib/site";
-import Reveal from "./Reveal";
+
+const DOUBLED = [...clientLogos, ...clientLogos];
 
 export default function TrustBar() {
   return (
-    <section className="border-b border-[#d2d2d7] bg-[#f5f5f7] py-10">
-      <div className="mx-auto max-w-container px-6">
-        <Reveal>
-          <p className="text-center text-[12px] font-600 uppercase tracking-[0.2em] text-[#6e6e73]">
-            Trusted by ambitious businesses across the Carolinas
-          </p>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-            {clientLogos.map((logo) => (
-              <span
-                key={logo}
-                className="font-display text-[14px] font-600 text-[#86868b] transition-colors hover:text-[#1d1d1f]"
-              >
-                {logo}
-              </span>
-            ))}
-          </div>
-        </Reveal>
+    <section className="border-b border-[#d2d2d7] bg-[#f5f5f7] py-8 overflow-hidden">
+      <p className="mb-5 text-center text-[11px] font-600 uppercase tracking-[0.22em] text-[#86868b]">
+        Trusted by ambitious businesses
+      </p>
+      <div className="marquee-wrap">
+        <div className="marquee-track animate-marquee gap-0">
+          {DOUBLED.map((logo, i) => (
+            <span
+              key={i}
+              className="inline-flex items-center px-10 font-display text-[14px] font-600 text-[#86868b] transition-colors duration-200 hover:text-[#1d1d1f]"
+            >
+              {logo}
+              <span className="ml-10 h-1 w-1 rounded-full bg-[#d2d2d7]" aria-hidden />
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

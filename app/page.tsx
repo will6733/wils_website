@@ -8,6 +8,7 @@ import Results from "@/components/Results";
 import Testimonials from "@/components/Testimonials";
 import Team from "@/components/Team";
 import Pricing from "@/components/Pricing";
+import FAQ from "@/components/FAQ";
 import BookCta from "@/components/BookCta";
 import Footer from "@/components/Footer";
 
@@ -24,6 +25,7 @@ export default function Home() {
       <Testimonials />
       <Team />
       <Pricing />
+      <FAQ />
       <BookCta />
       <Footer />
     </main>

@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight } from "next/font/google";
+import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
+import MobileCta from "@/components/MobileCta";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const interTight = Inter_Tight({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  variable: "--font-inter-tight",
+  weight: ["400", "500", "600"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -20,14 +28,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${interTight.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
+      <body>
+        {children}
+        <MobileCta />
+      </body>
     </html>
   );
 }

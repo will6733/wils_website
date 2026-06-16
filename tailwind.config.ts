@@ -18,7 +18,6 @@ const config: Config = {
           DEFAULT: "#0071e3",
           400: "#0066cc",
           300: "#2997ff",
-          cyan: "#0071e3",
         },
         mid: "#6e6e73",
         "border-soft": "#d2d2d7",
@@ -27,32 +26,36 @@ const config: Config = {
         "muted-foreground": "rgb(var(--muted-foreground) / <alpha-value>)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
-        display: ["var(--font-inter-tight)", "var(--font-inter)", "Helvetica Neue", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
       },
       fontWeight: {
+        "400": "400",
         "500": "500",
         "600": "600",
         "700": "700",
-        "800": "800",
       },
       maxWidth: {
         container: "1180px",
-      },
-      letterSpacing: {
-        tightest: "-0.04em",
-        tighter: "-0.03em",
-        tight: "-0.02em",
-        display: "-0.144px",
       },
       keyframes: {
         "fade-up": {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(0,113,227,0)" },
+          "50%": { boxShadow: "0 0 20px 4px rgba(0,113,227,0.35)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        marquee: "marquee 28s linear infinite",
+        "pulse-glow": "pulse-glow 2.5s ease-in-out infinite",
       },
     },
   },

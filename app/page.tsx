@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import HeroScroll from "@/components/HeroScroll";
 import Showcase from "@/components/Showcase";
 import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main>
       <Header />
-      <Hero />
+      <HeroScroll />
       <Showcase />
       <TrustBar />
       <Services />
